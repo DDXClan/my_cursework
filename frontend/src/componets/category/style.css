@@ -1,0 +1,16 @@
+.category_list
+{
+    text-align: center;
+}
+
+.category_list li
+{
+    margin: 32px;
+    font-size: 24px;
+}
+
+.category_list a:hover
+{
+    text-decoration: underline;
+    transition: .5s;
+}

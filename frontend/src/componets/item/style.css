@@ -1,0 +1,88 @@
+.item 
+{
+    margin-top: 20px;
+}
+
+.item img
+{
+    width: 300px;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
+.item h4
+{
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.item_info
+{
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+
+.category_item
+{
+    padding: 24px 24px 0 24px;
+}
+
+.desription
+{
+    width: 700px;
+    padding: 24px;
+}
+
+.item_info .price_and_basket .price
+{
+    background-color: unset;
+    padding: 24px;
+}
+
+.quantity
+{
+    padding: 0 24px 24px;
+}
+
+.price_and_basket
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add_in_basket
+{
+    padding: 16px;
+    font-size: 24px;
+    background-color: rgba(252, 173, 3, 0.521);
+    border-radius: 20px;
+}
+
+.add_in_basket:hover
+{
+    background-color: rgba(252, 173, 3, 0.788);
+    transition: .3s;
+}
+
+.back
+{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 24px;
+    padding: 16px;
+    position: absolute;
+    border-radius: 24px;
+    background-color: rgba(255, 230, 0, 0.678);
+}
+
+.back:hover
+{
+    background-color: rgba(255, 217, 4, 0.61);
+    transition: 0.3s;
+}

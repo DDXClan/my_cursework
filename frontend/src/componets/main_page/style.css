@@ -1,0 +1,58 @@
+.search input[type=search]
+{
+    font-size: 24px;
+    border: 2px solid #ffc40070;
+    margin: 0 auto 0 600px;
+    display: block;
+    padding: 8px;
+    border-radius: 16px;
+    background-color: rgba(255, 217, 4, 0.459);
+    margin-top: -55px;
+}
+
+
+.cards
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.cards ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cards li 
+{
+    margin: 24px;
+}
+
+.cards img
+{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cards p
+{
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.price
+{
+    background-color: rgba(255, 166, 0, 0.678);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.price:hover
+{
+    background-color: rgba(255, 115, 0, 0.726);
+    transition: .5s;
+}

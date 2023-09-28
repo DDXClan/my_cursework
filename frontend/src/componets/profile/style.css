@@ -1,0 +1,67 @@
+.profile_img
+{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    margin-left: 20px;
+    object-fit: cover;
+}
+
+.profile_info
+{
+    display: flex;
+}
+
+.profile form 
+{
+    width: 300px;
+    margin: 20px;
+}
+
+.profile label
+{
+    display: block;
+    font-size: 20px;
+    text-align: center;
+}
+
+.profile
+{
+    margin-top: 30px;
+}
+
+.profile_info p
+{
+    padding: 20px;
+    font-size: 24px;
+}
+
+.profile input 
+{
+    border: 1px solid;
+    padding: 15px;;
+    border-radius: 30px;
+    background-color: rgba(229, 255, 0, 0.411);
+}
+
+.profile form button
+{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 10px;
+    background-color: rgba(255, 209, 2, 0.616);
+    border-radius: 15px;
+    margin-top: 16px;
+}
+
+.profile button:hover
+{
+    background-color: rgba(188, 255, 2, 0.575);
+    transition: .5s;
+}
+
+.profile a 
+{
+    text-decoration: underline;
+}

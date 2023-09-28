@@ -1,0 +1,53 @@
+.sign_up h2
+{
+    margin-bottom: 30px;
+}
+
+.sign_up input
+{
+    border: 1px solid;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 300px;
+    background-color: rgba(172, 255, 47, 0.267);
+}
+
+.sign_up input:focus
+{
+    background-color: rgba(255, 251, 0, 0.301);
+    transition: 1s;
+}
+
+.sign_up input:placeholder-shown
+{
+    background-color: unset;
+}
+.sign_up button
+{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 10px;
+    background-color: rgba(255, 209, 2, 0.616);
+    border-radius: 15px;
+}
+
+.sign_up button:hover
+{
+    background-color: rgba(188, 255, 2, 0.575);
+    transition: .5s;
+}
+.sign_up p 
+{
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sign_up a 
+{
+    text-decoration: underline;
+}

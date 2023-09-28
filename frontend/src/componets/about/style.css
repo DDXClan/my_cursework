@@ -1,0 +1,23 @@
+.about
+{
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.about p
+{
+    margin: 20px;
+}
+
+.about li
+{
+    padding: 40px;
+    
+}
+.about ul
+{
+    border-radius: 24px;
+    background-color: rgba(241, 207, 13, 0.342);
+}

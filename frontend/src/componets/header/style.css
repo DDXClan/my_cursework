@@ -1,0 +1,26 @@
+header
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    align-items: center;
+    background-color: rgba(255, 230, 0, 0.644);
+}
+
+.main_nav ul
+{
+    display: flex;
+    margin-left: 16px;
+}
+
+.main_nav li, .login
+{
+    padding: 16px;   
+}
+
+header li:hover
+{
+    background-color: rgba(255, 217, 4, 0.61);
+    border-radius: 8px;
+    transition: 0.5s;
+}
