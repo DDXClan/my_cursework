@@ -30,7 +30,7 @@ async def login(username: str = Form(...), password: str = Form(...)) -> dict:
         if await verify_password(password, user.password):
             token = await generate_jwt_token({'sub': user.username})
             return {'token': token, 'type': 'bearer'}
-    raise HTTPException(status_code=400, detail='invalid username or password')
+    raise HTTPException(status_code=401, detail='invalid username or password')
 
 
 @auth.get('/profile', status_code=200)

@@ -1,28 +1,28 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './style.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 const Profile = () => {
     const [userdata, setUserdata] = useState(null)
     const token = localStorage.getItem('token')
     const navigate = useNavigate()
     if(token === null) navigate('/login')
-    useState(() => {
-        
-        fetch('http://127.0.0.1:8000/api/auth/profile', {
+    useEffect(() => {
+        const res = fetch('http://127.0.0.1:8000/api/auth/profile', {
             method: 'GET', 
             headers: 
             {
                 'Authorization': `Bearer ${token}`
             }
         })
-        
         .then(response => response.json())
         .then(data => {
             setUserdata(data)
         })
-        .catch(error => navigate('/error'));
+        .catch(error => {
+            console.log(error.detail)
+        });
         
-    }, [token])
+    }, [token, navigate])
     const [profileImg, setProfileImg] = useState(null)
 
     const handleProfileImgChange = (event) =>

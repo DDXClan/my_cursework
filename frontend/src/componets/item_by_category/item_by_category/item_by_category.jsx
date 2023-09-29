@@ -1,8 +1,8 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 const ItemByCategory = () => {
     const { id } = useParams()
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [items, setItems] = useState([])
     useEffect(() => 
     {

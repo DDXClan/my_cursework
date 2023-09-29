@@ -34,9 +34,12 @@ const Login = () => {
         .then((response) => response.json())
         .then((data) => { 
             const token = data.token
-            localStorage.setItem('token', token)
-            navigate('/profile')
-            window.location.reload() 
+            if(token)
+            {
+                localStorage.setItem('token', token)
+                navigate('/profile')
+                window.location.reload() 
+            }
         })
         .catch((error) => console.log(error))
     }
