@@ -11,7 +11,7 @@ import Login from './componets/login/login';
 import Profile from './componets/profile/profile';
 import AddItem from './componets/add_item/add_item';
 import Error from './componets/error/error';
-
+import ItemByCategory from './componets/item_by_category/item_by_category/item_by_category';
 const useAdminAuthorization = () => {
   const [isAdmin, setAdmin] = useState(false);
   const token = localStorage.getItem('token');
@@ -51,6 +51,7 @@ function App() {
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/category/:id' element={<ItemByCategory/>}/>
         <Route path='/error' element={<Error/>}/>
       </Routes>
     </div>

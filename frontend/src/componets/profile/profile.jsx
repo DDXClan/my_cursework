@@ -20,7 +20,7 @@ const Profile = () => {
         .then(data => {
             setUserdata(data)
         })
-        .catch(error => console.log(error));
+        .catch(error => navigate('/error'));
         
     }, [token])
     const [profileImg, setProfileImg] = useState(null)

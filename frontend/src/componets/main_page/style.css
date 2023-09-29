@@ -26,7 +26,7 @@
 
 .cards li 
 {
-    margin: 24px;
+    margin: 24px;   
 }
 
 .cards img
@@ -42,8 +42,12 @@
     text-align: center;
     font-size: 16px;
     font-weight: 500;
+    
 }
-
+.item_name
+{
+    height: 70px;
+}
 .price
 {
     background-color: rgba(255, 166, 0, 0.678);

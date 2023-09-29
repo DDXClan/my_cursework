@@ -66,3 +66,9 @@ async def get_item(id: int, db: AsyncSession = Depends(get_session)):
         return {**item.__dict__, 'category': category}
     raise HTTPException(status_code=404, detail='item not found')
 
+
+@items.get('/category/{id}', status_code=200)
+async def get_item_by_category(id: int, db: AsyncSession = Depends(get_session)):
+    sorted_item = await db.execute(select(Item).where(Item.category == id))
+    sorted_item = sorted_item.scalars().all()
+    return(sorted_item)    

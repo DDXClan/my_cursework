@@ -1,20 +1,29 @@
-import './style.css'
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-
-const MainPage = () => {
-    const [items, setItems] = useState([]);
-    useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/items/')
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+const ItemByCategory = () => {
+    const { id } = useParams()
+    const navigate = useNavigate()
+    const [items, setItems] = useState([])
+    useEffect(() => 
+    {
+        if(id) {
+            fetch(`http://localhost:8000/api/items/category/${id}`)
             .then((res) => res.json())
-            .then((data) => setItems(data));
-    }, []);
+            .then((data) => setItems(data))
+            
+        }
+    }, [id])
+
+    if (!items) {
+        return <div className='loading'>Loading...</div>;
+    }
+
     return ( 
         <>
             <form className='search'>
                 <input type="search" placeholder='Поиск'/>
             </form>
-            <h2>Главная</h2>
+            {/* <h2></h2> */}
             <div className={'cards'}>
                 <ul>
                     {
@@ -35,7 +44,7 @@ const MainPage = () => {
                 </ul>
             </div>
         </>
-     );
+    )
 }
  
-export default MainPage;
+export default ItemByCategory;
