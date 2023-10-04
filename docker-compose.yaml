@@ -10,3 +10,34 @@ services:
       - POSTGRES_DB=postgres
     ports:
       - "5432:5432"
+    networks:
+      - mynetwork
+  backend:
+    container_name: 'backend'
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@db/postgres
+      - SECRET_KEY=Sad
+      - ALGORITHM=HS256
+    depends_on:
+      - db
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - mynetwork
+
+  frontend:
+    container_name: 'frontend'
+    restart: always
+    depends_on:
+      - backend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+networks:
+  mynetwork:

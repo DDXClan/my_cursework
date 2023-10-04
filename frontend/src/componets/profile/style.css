@@ -65,3 +65,34 @@
 {
     text-decoration: underline;
 }
+
+.cards a
+{
+    text-decoration: none;
+}
+
+.cards .delete
+{
+    text-decoration: underline;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.cards .delete:hover
+{
+    background-color: rgba(255, 100, 100, 0.644);
+    transition: 0.5s;
+}
+
+.cards .not_items 
+{
+    font-size: 24px;
+    padding: 20px;
+    margin-bottom: 100px;
+    text-align: center;
+}

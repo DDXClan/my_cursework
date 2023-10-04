@@ -38,4 +38,8 @@ class User(Base):
     img_profile = Column(String, default='no_image.png')
 
 
-
+class ItemsUser(Base):
+    __tablename__ = 'ItemsUser'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user = Column(ForeignKey(User.id))
+    item = Column(ForeignKey(Item.id))

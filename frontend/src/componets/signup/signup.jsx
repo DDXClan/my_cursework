@@ -19,6 +19,34 @@ const SignUp = () => {
     {
         setPassword(event.target.value)
     }
+    const handleSubmitLogin = () => 
+    {
+    
+        const params = new URLSearchParams()
+        params.append('username', username)
+        params.append('password', password)
+
+        fetch('http://127.0.0.1:8000/api/auth/login', 
+        {
+            method: 'POST',
+            headers:
+            {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: params.toString(),
+        })
+        .then((response) => response.json())
+        .then((data) => { 
+            const token = data.token
+            if(token)
+            {
+                localStorage.setItem('token', token)
+                navigate('/profile')
+                window.location.reload() 
+            }
+        })
+        .catch((error) => console.log(error))
+    }
 
     const handleSubmit = (event) => 
     {
@@ -42,11 +70,15 @@ const SignUp = () => {
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
-            navigate('/login')})
+            handleSubmitLogin()
+            navigate('/profile')
+        })
         .catch((error) => {
             console.log(error)
         })
     }
+
+    
     return ( 
         <div className='sign_up'>
             <h2>Регистрация</h2>

@@ -10,7 +10,6 @@ const Header = () => {
         navigate('/')
         window.location.reload()
     }
-
     return ( 
         
         <header>

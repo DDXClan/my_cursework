@@ -3,10 +3,14 @@ from fastapi.responses import FileResponse
 from starlette.middleware.cors import CORSMiddleware
 from app.routes.auth import auth
 from app.routes.items import items
+from app.routes.user_item import user_item
 from app.settings import img_folder
+
 app = FastAPI()
+
 app.include_router(items)
 app.include_router(auth)
+app.include_router(user_item)
 
 app.add_middleware(
     CORSMiddleware,
