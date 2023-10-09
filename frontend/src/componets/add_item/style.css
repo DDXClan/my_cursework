@@ -1,0 +1,72 @@
+.form_create input, .form_create select, .form_create textarea
+{
+    display: block;
+    border: 1px solid;
+    padding: 12px;
+    margin: 0 auto;
+    border-radius: 16px;
+    margin-top: 16px;
+    width: 400px;
+    resize: none;
+}
+
+.form_create textarea
+{
+    width: 400px;
+    height: 200px;
+}
+.form_create
+{
+    margin-top: 20px;
+}
+.form_create button
+{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 24px;
+    border: 1px solid;
+    border-radius: 20px;
+    margin-bottom: 200px;
+    margin-top: 24px;
+    width: 200px;
+}
+
+.form_create input, .form_create textarea
+{
+    background-color: rgba(172, 255, 47, 0.267);
+}
+
+.form_create option
+{
+    background-color: rgb(226, 226, 226);
+    font-size: 20px;
+    border-radius: 16px;
+}
+
+.form_create select
+{
+    appearance: none
+}
+
+.form_create input:focus, .form_create textarea:focus
+{
+    background-color: rgba(255, 251, 0, 0.301);
+    transition: 1s;
+}
+
+.form_create input:placeholder-shown, 
+.form_create select:placeholder-shown, 
+.form_create textarea:placeholder-shown,
+.form_create option:placeholder-shown, 
+.form_create input[type='file']:placeholder-shown
+{
+    background-color: unset;
+ 
+}
+
+.form_create button:hover
+{
+    background-color: rgba(128, 255, 0, 0.466);
+    transition: 1s;
+}
