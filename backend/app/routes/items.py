@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from app.scheme.items import CategoryScheme
 from app.models.database import get_session
-from app.models.models import Category, Item, User
+from app.models.models import Category, Item, User, ItemsUser
 from app.settings import img_folder
 from app.utilit.auth import get_current_user
 items = APIRouter(prefix='/api/items', tags=['Items'])
@@ -61,6 +61,18 @@ async def add_item(name: str = Form(),
 async def get_items(db: AsyncSession = Depends(get_session)):
     all_items = await db.execute(select(Item))
     return all_items.scalars().all()
+
+@items.get('/accounting')
+async def get_items_accounting(db: AsyncSession = Depends(get_session), user: User = Depends(get_current_user)):
+    if user.role == 1:
+        all_items = await db.execute(select(ItemsUser))
+        return [
+            {
+                'item': item.item,
+                'user': await db.execute(select(User).where(User.id == item.user)).scalar_one_or_none(),
+            } for item in all_items.scalars().all()
+        ] 
+    raise HTTPException(status_code=403)
 
 
 @items.get('/{id}', status_code=200)
